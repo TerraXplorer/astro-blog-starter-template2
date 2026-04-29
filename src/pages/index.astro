@@ -11,12 +11,23 @@ const description = 'Freelance Microsoft 365 Consultant mit Schwerpunkt Intune, 
 <html lang="de">
 	<head>
 		<BaseHead title={title} description={description} />
+		<style>
+			html {
+				scroll-behavior: smooth;
+			}
+
+			section {
+				margin-bottom: 60px;
+			}
+		</style>
 	</head>
 	<body>
 		<Header />
 
 		<main>
-			<section>
+
+			<!-- START -->
+			<section id="start">
 				<h1>Markus Stoll</h1>
 				<p><strong>Microsoft 365 / Intune Consultant</strong></p>
 				<p>
@@ -29,7 +40,8 @@ const description = 'Freelance Microsoft 365 Consultant mit Schwerpunkt Intune, 
 				</p>
 			</section>
 
-			<section>
+			<!-- PROFIL -->
+			<section id="profil">
 				<h2>Profil</h2>
 				<p>
 					Erfahrung in der eigenverantwortlichen Betreuung und Weiterentwicklung hybrider
@@ -39,7 +51,8 @@ const description = 'Freelance Microsoft 365 Consultant mit Schwerpunkt Intune, 
 				</p>
 			</section>
 
-			<section>
+			<!-- LEISTUNGEN -->
+			<section id="leistungen">
 				<h2>Leistungen</h2>
 				<ul>
 					<li>Microsoft Intune: Compliance Policies, Security Baselines, App Deployment</li>
@@ -51,7 +64,8 @@ const description = 'Freelance Microsoft 365 Consultant mit Schwerpunkt Intune, 
 				</ul>
 			</section>
 
-			<section>
+			<!-- PROJEKTE -->
+			<section id="projekte">
 				<h2>Projektbeispiele</h2>
 
 				<h3>Betrieb und Weiterentwicklung einer Intune-Umgebung</h3>
@@ -83,13 +97,15 @@ const description = 'Freelance Microsoft 365 Consultant mit Schwerpunkt Intune, 
 				</ul>
 			</section>
 
-			<section>
+			<!-- KONTAKT -->
+			<section id="kontakt">
 				<h2>Kontakt</h2>
 				<p>
 					Für Projektanfragen:
 					<a href="mailto:info@markusstoll.cloud">info@markusstoll.cloud</a>
 				</p>
 			</section>
+
 		</main>
 
 		<Footer />
