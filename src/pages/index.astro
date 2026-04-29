@@ -12,143 +12,182 @@ const description = 'Freelance Microsoft 365 Consultant mit Schwerpunkt Intune, 
 	<head>
 		<BaseHead title={title} description={description} />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 		<style>
-	html {
-		scroll-behavior: smooth;
-		background: #0f172a;
-	}
+			* {
+				box-sizing: border-box;
+			}
 
-	body {
-		margin: 0;
-		background: #0f172a;
-		color: #e5e7eb;
-		font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-	}
+			html {
+				width: 100%;
+				min-width: 100%;
+				margin: 0;
+				padding: 0;
+				scroll-behavior: smooth;
+				background: #0f172a;
+				overflow-x: hidden;
+			}
 
-	main {
-		max-width: 1000px;
-		margin: 0 auto;
-		padding: 48px 20px;
-	}
+			body {
+				width: 100%;
+				min-width: 100%;
+				margin: 0;
+				padding: 0;
+				background: #0f172a;
+				color: #e5e7eb;
+				font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+				overflow-x: hidden;
+			}
 
-	section {
-		margin-bottom: 80px;
-		padding: 32px;
-		background: #1e293b;
-		border: 1px solid #334155;
-		border-radius: 14px;
-		scroll-margin-top: 90px;
-		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-	}
+			main {
+				width: 100%;
+				max-width: 1000px;
+				margin: 0 auto;
+				padding: 48px 20px;
+			}
 
-	#start {
-		background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-		border-color: #334155;
-	}
+			section {
+				width: 100%;
+				margin-bottom: 80px;
+				padding: 32px;
+				background: #1e293b;
+				border: 1px solid #334155;
+				border-radius: 14px;
+				scroll-margin-top: 90px;
+				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+			}
 
-	#kontakt {
-		min-height: 60vh;
-	}
+			#start {
+				background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+				border-color: #334155;
+			}
 
-	h1,
-	h2,
-	h3 {
-		color: #f8fafc;
-		line-height: 1.2;
-	}
+			#kontakt {
+				min-height: 60vh;
+			}
 
-	h1 {
-		font-size: clamp(2rem, 4vw, 3.2rem);
-		margin-top: 0;
-		margin-bottom: 0.4em;
-	}
+			h1,
+			h2,
+			h3 {
+				color: #f8fafc;
+				line-height: 1.2;
+			}
 
-	h2 {
-		margin-top: 0;
-		font-size: 1.6rem;
-	}
+			h1 {
+				font-size: clamp(2rem, 4vw, 3.2rem);
+				margin-top: 0;
+				margin-bottom: 0.4em;
+			}
 
-	h3 {
-		margin-top: 2em;
-		margin-bottom: 0.5em;
-		font-size: 1.15rem;
-	}
+			h2 {
+				margin-top: 0;
+				font-size: 1.6rem;
+			}
 
-	p {
-		color: #cbd5e1;
-		font-size: 1rem;
-	}
+			h3 {
+				margin-top: 2em;
+				margin-bottom: 0.5em;
+				font-size: 1.15rem;
+			}
 
-	ul {
-		padding-left: 1.25rem;
-	}
+			p {
+				color: #cbd5e1;
+				font-size: 1rem;
+			}
 
-	li {
-		margin-bottom: 0.5em;
-		color: #cbd5e1;
-	}
+			.hero-text {
+				max-width: 760px;
+			}
 
-	a {
-		color: #3b82f6;
-		text-decoration: none;
-	}
+			ul {
+				padding-left: 1.25rem;
+			}
 
-	a:hover {
-		text-decoration: underline;
-	}
+			li {
+				margin-bottom: 0.5em;
+				color: #cbd5e1;
+			}
 
-	strong {
-		color: #f8fafc;
-	}
+			a {
+				color: #3b82f6;
+				text-decoration: none;
+			}
 
-	@media (max-width: 720px) {
-		main {
-			padding: 32px 14px;
-		}
+			a:hover {
+				text-decoration: underline;
+			}
 
-		section {
-			padding: 24px 20px;
-			border-radius: 12px;
-		}
-	}
-</style>
+			strong {
+				color: #f8fafc;
+			}
+
+			@media (max-width: 720px) {
+				main {
+					padding: 32px 14px;
+				}
+
+				section {
+					padding: 22px 18px;
+					margin-bottom: 48px;
+					border-radius: 12px;
+				}
+
+				p,
+				li {
+					font-size: 0.95rem;
+					line-height: 1.6;
+				}
+
+				ul {
+					padding-left: 1rem;
+				}
+			}
+		</style>
 	</head>
+
 	<body>
 		<Header />
 
 		<main>
-
-			<!-- START -->
 			<section id="start">
 				<h1>Markus Stoll</h1>
 				<p><strong>Microsoft 365 / Intune Consultant</strong></p>
+
 				<p class="hero-text">
 					Ich unterstütze Unternehmen bei Einführung, Betrieb und Optimierung von Microsoft 365,
 					Microsoft Intune, Windows Autopilot, Entra ID, Exchange Online sowie klassischen
 					Active Directory Infrastrukturen – mit Fokus auf stabile Deployments, klare Prozesse
 					und automatisierte Administration.
 				</p>
+
 				<p>
 					<a href="mailto:info@markusstoll.cloud">info@markusstoll.cloud</a> ·
 					0151 / 400 76 528 · Bielefeld
 				</p>
 			</section>
 
-			<!-- PROFIL -->
 			<section id="profil">
 				<h2>Profil</h2>
+
 				<p>
-					Erfahrung in der eigenverantwortlichen Betreuung und Weiterentwicklung hybrider Microsoft-365-Umgebungen mit ca. 500 Benutzern und über 500 Endgeräten. Fokus auf Intune, Autopilot, Entra ID sowie Automatisierung von Deployment- und Patchprozessen.
+					Erfahrung in der eigenverantwortlichen Betreuung und Weiterentwicklung hybrider
+					Microsoft-365-Umgebungen mit ca. 500 Benutzern und über 500 Endgeräten.
+					Fokus auf Intune, Autopilot, Entra ID sowie Automatisierung von Deployment-
+					und Patchprozessen.
 				</p>
-				<p> </p>
+
 				<p>
-				Erfahrung in der Betreuung und Weiterentwicklung mehrerer Kundenumgebungen im Umfeld eines Microsoft-365-Dienstleisters. Zusammenarbeit mit IT-Administratoren sowie Beratung von Fachbereichen und Geschäftsführung. Umsetzung von Einführungen, Erweiterungen, Troubleshooting und Identifikation von Optimierungspotenzialen in Microsoft-365-, Intune- und hybriden Infrastrukturen.
+					Erfahrung in der Betreuung und Weiterentwicklung mehrerer Kundenumgebungen im Umfeld
+					eines Microsoft-365-Dienstleisters. Zusammenarbeit mit IT-Administratoren sowie Beratung
+					von Fachbereichen und Geschäftsführung. Umsetzung von Einführungen, Erweiterungen,
+					Troubleshooting und Identifikation von Optimierungspotenzialen in Microsoft-365-,
+					Intune- und hybriden Infrastrukturen.
 				</p>
 			</section>
 
-			<!-- LEISTUNGEN -->
 			<section id="leistungen">
 				<h2>Leistungen</h2>
+
 				<ul>
 					<li>Microsoft Intune: Compliance Policies, Security Baselines, App Deployment</li>
 					<li>Windows Autopilot: Azure AD Join, Deployment-Prozessoptimierung</li>
@@ -159,7 +198,6 @@ const description = 'Freelance Microsoft 365 Consultant mit Schwerpunkt Intune, 
 				</ul>
 			</section>
 
-			<!-- PROJEKTE -->
 			<section id="projekte">
 				<h2>Projektbeispiele</h2>
 
@@ -192,15 +230,14 @@ const description = 'Freelance Microsoft 365 Consultant mit Schwerpunkt Intune, 
 				</ul>
 			</section>
 
-			<!-- KONTAKT -->
 			<section id="kontakt">
 				<h2>Kontakt</h2>
+
 				<p>
 					Für Projektanfragen:
 					<a href="mailto:info@markusstoll.cloud">info@markusstoll.cloud</a>
 				</p>
 			</section>
-
 		</main>
 
 		<Footer />
@@ -216,7 +253,7 @@ const description = 'Freelance Microsoft 365 Consultant mit Schwerpunkt Intune, 
 					if (!target) return;
 
 					window.scrollTo({
-						top: target.offsetTop - 80,
+						top: target.offsetTop - 90,
 						behavior: 'smooth'
 					});
 
