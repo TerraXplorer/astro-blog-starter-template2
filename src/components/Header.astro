@@ -105,33 +105,36 @@
 		text-decoration: underline;
 	}
 
-	/* CTA Button */
-	.cta {
-		display: flex;
-		align-items: center;
-	}
+/* CTA Button */
+.cta {
+	display: flex;
+	align-items: center;
+}
 
-	.button {
-		display: inline-block;
-		padding: 0.6rem 1rem;
-		border-radius: 8px;
-		font-size: 0.9rem;
-		font-weight: 600;
-		text-decoration: none;
-		white-space: nowrap;
-	}
+.button {
+	display: inline-block;
+	padding: 0.6rem 1rem;
+	border-radius: 8px;
+	font-size: 0.9rem;
+	font-weight: 600;
+	text-decoration: none;
+	white-space: nowrap;
+}
 
-	.button.primary {
-		background: #3b82f6;
-		color: #ffffff;
-		border: 1px solid #3b82f6;
-		transition: background 0.2s ease, border-color 0.2s ease;
-	}
+/* WICHTIG: Farbe explizit setzen */
+.button.primary {
+	background: #3b82f6;
+	color: #ffffff !important;
+	border: 1px solid #3b82f6;
+	transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
 
-	.button.primary:hover {
-		background: #2563eb;
-		border-color: #2563eb;
-	}
+/* Hover */
+.button.primary:hover {
+	background: #2563eb;
+	border-color: #2563eb;
+	color: #ffffff;
+}
 
 	@media (max-width: 900px) {
 		.internal-links {
