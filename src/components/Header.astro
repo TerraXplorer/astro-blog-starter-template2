@@ -1,48 +1,64 @@
 ---
 ---
 
-<header>
-	<nav>
+<header class="site-header">
+	<nav class="nav">
 		<div class="brand">
 			<a href="/">Markus Stoll</a>
 			<span>Microsoft 365 / Intune Consultant</span>
 		</div>
 
-		<div class="internal-links">
+		<div class="desktop-links">
 			<a href="#profil">Profil</a>
 			<a href="#leistungen">Leistungen</a>
 			<a href="#projekte">Projekte</a>
 			<a href="#kontakt">Kontakt</a>
 		</div>
 
-		<a class="button primary" href="mailto:info@markusstoll.cloud">
+		<a class="button primary desktop-cta" href="mailto:info@markusstoll.cloud">
 			Projekt anfragen
 		</a>
+
+		<details class="mobile-menu">
+			<summary>Menü</summary>
+			<div class="mobile-links">
+				<a href="#profil">Profil</a>
+				<a href="#leistungen">Leistungen</a>
+				<a href="#projekte">Projekte</a>
+				<a href="#kontakt">Kontakt</a>
+				<a class="button primary" href="mailto:info@markusstoll.cloud">Projekt anfragen</a>
+			</div>
+		</details>
 	</nav>
 </header>
 
 <style>
-	header {
+	.site-header {
 		position: sticky;
 		top: 0;
 		z-index: 1000;
-		width: 100%;
+
+		width: 100vw;
+		margin-left: calc(50% - 50vw);
+		margin-right: calc(50% - 50vw);
+
 		background: #020617;
 		border-bottom: 1px solid #1e293b;
 		box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
 	}
 
-	nav {
+	.nav {
 		width: 100%;
 		max-width: 1100px;
 		margin: 0 auto;
 		min-height: 64px;
 		padding: 0 1rem;
+		box-sizing: border-box;
+
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		gap: 1rem;
-		box-sizing: border-box;
 	}
 
 	.brand {
@@ -64,36 +80,19 @@
 		line-height: 1.2;
 	}
 
-	.internal-links {
+	.desktop-links {
 		display: flex;
-		align-items: center;
 		gap: 1.25rem;
 	}
 
-	.internal-links a {
+	.desktop-links a {
 		color: #e5e7eb;
 		text-decoration: none;
-		position: relative;
 		white-space: nowrap;
 	}
 
-	.internal-links a:hover {
+	.desktop-links a:hover {
 		color: #3b82f6;
-	}
-
-	.internal-links a::after {
-		content: '';
-		position: absolute;
-		left: 0;
-		bottom: -4px;
-		width: 0;
-		height: 2px;
-		background: #3b82f6;
-		transition: width 0.2s ease;
-	}
-
-	.internal-links a:hover::after {
-		width: 100%;
 	}
 
 	.button {
@@ -110,28 +109,72 @@
 		background: #3b82f6;
 		color: #ffffff !important;
 		border: 1px solid #3b82f6;
-		transition: background 0.2s ease, border-color 0.2s ease;
 	}
 
 	.button.primary:hover {
 		background: #2563eb;
 		border-color: #2563eb;
-		color: #ffffff !important;
 		text-decoration: none;
 	}
 
+	.mobile-menu {
+		display: none;
+		position: relative;
+	}
+
+	.mobile-menu summary {
+		color: #f9fafb;
+		cursor: pointer;
+		list-style: none;
+		font-weight: 600;
+	}
+
+	.mobile-menu summary::-webkit-details-marker {
+		display: none;
+	}
+
+	.mobile-links {
+		position: absolute;
+		right: 0;
+		top: 42px;
+		min-width: 220px;
+
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+
+		padding: 1rem;
+		background: #020617;
+		border: 1px solid #1e293b;
+		border-radius: 10px;
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+	}
+
+	.mobile-links a {
+		color: #e5e7eb;
+		text-decoration: none;
+	}
+
+	.mobile-links a:hover {
+		color: #3b82f6;
+	}
+
 	@media (max-width: 900px) {
-		.internal-links {
+		.desktop-links,
+		.desktop-cta {
 			display: none;
+		}
+
+		.mobile-menu {
+			display: block;
+		}
+
+		.nav {
+			min-height: 56px;
 		}
 	}
 
-	@media (max-width: 768px) {
-		nav {
-			min-height: 56px;
-			padding: 0 0.85rem;
-		}
-
+	@media (max-width: 480px) {
 		.brand a {
 			font-size: 0.95rem;
 		}
@@ -140,8 +183,9 @@
 			font-size: 0.72rem;
 		}
 
-		.button {
-			display: none;
+		.mobile-links {
+			right: 0;
+			min-width: 200px;
 		}
 	}
 </style>
