@@ -12,19 +12,19 @@ const description = 'Freelance Microsoft 365 Consultant mit Schwerpunkt Intune, 
 	<head>
 		<BaseHead title={title} description={description} />
 		<style>
-	html {
-		scroll-behavior: smooth;
-	}
+			html {
+				scroll-behavior: smooth;
+			}
 
-	section {
-		margin-bottom: 80px;
-		scroll-margin-top: 90px;
-	}
+			section {
+				margin-bottom: 80px;
+				scroll-margin-top: 90px;
+			}
 
-	#kontakt {
-		min-height: 60vh;
-	}
-</style>
+			#kontakt {
+				min-height: 60vh;
+			}
+		</style>
 	</head>
 	<body>
 		<Header />
@@ -114,5 +114,25 @@ const description = 'Freelance Microsoft 365 Consultant mit Schwerpunkt Intune, 
 		</main>
 
 		<Footer />
+
+		<script>
+			document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+				anchor.addEventListener('click', function (event) {
+					event.preventDefault();
+
+					const targetId = this.getAttribute('href');
+					const target = document.querySelector(targetId);
+
+					if (!target) return;
+
+					window.scrollTo({
+						top: target.offsetTop - 80,
+						behavior: 'smooth'
+					});
+
+					history.pushState(null, '', targetId);
+				});
+			});
+		</script>
 	</body>
 </html>
