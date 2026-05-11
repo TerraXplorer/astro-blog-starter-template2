@@ -29,6 +29,7 @@ const description = 'Freelance Microsoft 365 Consultant mit Schwerpunkt Intune, 
 			}
 
 			body {
+				position: relative;
 				width: 100%;
 				min-width: 100%;
 				margin: 0;
@@ -39,9 +40,21 @@ const description = 'Freelance Microsoft 365 Consultant mit Schwerpunkt Intune, 
 				overflow-x: hidden;
 			}
 
+			body::before {
+				content: "";
+				position: fixed;
+				inset: 0;
+				z-index: -1;
+				background:
+					radial-gradient(circle at 15% 10%, rgba(59, 130, 246, 0.18), transparent 32%),
+					radial-gradient(circle at 85% 25%, rgba(14, 165, 233, 0.12), transparent 28%),
+					radial-gradient(circle at 50% 90%, rgba(30, 41, 59, 0.9), transparent 40%);
+				pointer-events: none;
+			}
+
 			main {
 				width: 100%;
-				max-width: 1000px;
+				max-width: 1100px;
 				margin: 0 auto;
 				padding: 48px 20px;
 			}
@@ -50,20 +63,20 @@ const description = 'Freelance Microsoft 365 Consultant mit Schwerpunkt Intune, 
 				width: 100%;
 				margin-bottom: 80px;
 				padding: 32px;
-				background: #1e293b;
+				background: rgba(30, 41, 59, 0.92);
 				border: 1px solid #334155;
-				border-radius: 14px;
+				border-radius: 18px;
 				scroll-margin-top: 90px;
 				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 			}
 
 			#start {
-				background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+				background: linear-gradient(135deg, rgba(30, 41, 59, 0.98) 0%, rgba(15, 23, 42, 0.98) 100%);
 				border-color: #334155;
 			}
 
 			#kontakt {
-				min-height: 60vh;
+				min-height: 50vh;
 			}
 
 			h1,
@@ -74,40 +87,28 @@ const description = 'Freelance Microsoft 365 Consultant mit Schwerpunkt Intune, 
 			}
 
 			h1 {
-				font-size: clamp(2rem, 4vw, 3.2rem);
+				font-size: clamp(2.4rem, 5vw, 4rem);
 				margin-top: 0;
-				margin-bottom: 0.4em;
+				margin-bottom: 0.35em;
+				letter-spacing: -0.04em;
 			}
 
 			h2 {
 				margin-top: 0;
-				font-size: 1.6rem;
+				font-size: 1.7rem;
+				letter-spacing: -0.02em;
 			}
 
 			h3 {
-				margin-top: 2em;
-				margin-bottom: 0.5em;
-				font-size: 1.15rem;
+				margin-top: 0;
+				margin-bottom: 0.6em;
+				font-size: 1.1rem;
 			}
 
 			p {
 				color: #cbd5e1;
 				font-size: 1rem;
-				line-height: 1.6;
-			}
-
-			.hero-text {
-				max-width: 760px;
-			}
-
-			ul {
-				padding-left: 1.25rem;
-			}
-
-			li {
-				margin-bottom: 0.5em;
-				color: #cbd5e1;
-				line-height: 1.6;
+				line-height: 1.7;
 			}
 
 			a {
@@ -123,6 +124,201 @@ const description = 'Freelance Microsoft 365 Consultant mit Schwerpunkt Intune, 
 				color: #f8fafc;
 			}
 
+			ul {
+				padding-left: 1.25rem;
+			}
+
+			li {
+				margin-bottom: 0.5em;
+				color: #cbd5e1;
+				line-height: 1.6;
+			}
+
+			.hero-layout {
+				display: grid;
+				grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.8fr);
+				gap: 2rem;
+				align-items: center;
+			}
+
+			.hero-text {
+				max-width: 760px;
+			}
+
+			.hero-meta {
+				margin-top: 1.4rem;
+			}
+
+			.hero-badges {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.6rem;
+				margin-top: 1.6rem;
+			}
+
+			.hero-badges span {
+				padding: 0.45rem 0.75rem;
+				border-radius: 999px;
+				background: rgba(59, 130, 246, 0.12);
+				border: 1px solid rgba(59, 130, 246, 0.35);
+				color: #bfdbfe;
+				font-size: 0.9rem;
+				font-weight: 600;
+			}
+
+			.stack-card {
+				padding: 1.25rem;
+				border-radius: 16px;
+				background: rgba(15, 23, 42, 0.8);
+				border: 1px solid #334155;
+				box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+			}
+
+			.stack-card-title {
+				display: block;
+				margin-bottom: 0.9rem;
+				color: #93c5fd;
+				font-size: 0.78rem;
+				font-weight: 800;
+				text-transform: uppercase;
+				letter-spacing: 0.08em;
+			}
+
+			.stack-card div {
+				padding: 0.75rem;
+				margin-bottom: 0.6rem;
+				border-radius: 10px;
+				background: #1e293b;
+				border: 1px solid #334155;
+				color: #cbd5e1;
+				font-size: 0.9rem;
+			}
+
+			.stack-card div:last-child {
+				margin-bottom: 0;
+			}
+
+			.stats-grid {
+				display: grid;
+				grid-template-columns: repeat(4, minmax(0, 1fr));
+				gap: 1rem;
+				margin-top: 2rem;
+			}
+
+			.stat-card {
+				padding: 1.25rem;
+				border-radius: 14px;
+				background: #0f172a;
+				border: 1px solid #334155;
+			}
+
+			.stat-card strong {
+				display: block;
+				font-size: 1.8rem;
+				color: #f8fafc;
+				margin-bottom: 0.35rem;
+				letter-spacing: -0.03em;
+			}
+
+			.stat-card span {
+				color: #94a3b8;
+				font-size: 0.9rem;
+				line-height: 1.4;
+			}
+
+			.service-grid {
+				display: grid;
+				grid-template-columns: repeat(3, minmax(0, 1fr));
+				gap: 1rem;
+				margin-top: 1.5rem;
+			}
+
+			.service-card {
+				padding: 1.25rem;
+				border-radius: 14px;
+				background: #0f172a;
+				border: 1px solid #334155;
+			}
+
+			.service-card h3 {
+				margin-bottom: 0.5rem;
+			}
+
+			.service-card p {
+				margin-bottom: 0;
+				font-size: 0.95rem;
+			}
+
+			.project-grid {
+				display: grid;
+				grid-template-columns: repeat(2, minmax(0, 1fr));
+				gap: 1.25rem;
+				margin-top: 1.5rem;
+			}
+
+			.project-card {
+				padding: 1.5rem;
+				border-radius: 16px;
+				background: linear-gradient(180deg, #0f172a 0%, #111827 100%);
+				border: 1px solid #334155;
+			}
+
+			.project-label {
+				display: inline-block;
+				margin-bottom: 0.75rem;
+				color: #93c5fd;
+				font-size: 0.78rem;
+				font-weight: 800;
+				text-transform: uppercase;
+				letter-spacing: 0.08em;
+			}
+
+			.project-card ul {
+				margin-bottom: 0;
+			}
+
+			.contact-grid {
+				display: grid;
+				grid-template-columns: repeat(2, minmax(0, 1fr));
+				gap: 1rem;
+				margin-top: 1.5rem;
+			}
+
+			.contact-card {
+				padding: 1.25rem;
+				border-radius: 14px;
+				background: #0f172a;
+				border: 1px solid #334155;
+			}
+
+			.contact-card span {
+				display: block;
+				margin-bottom: 0.35rem;
+				color: #94a3b8;
+				font-size: 0.85rem;
+			}
+
+			.contact-card strong,
+			.contact-card a {
+				color: #f8fafc;
+				font-weight: 700;
+			}
+
+			@media (max-width: 900px) {
+				.hero-layout {
+					grid-template-columns: 1fr;
+				}
+
+				.service-grid,
+				.project-grid {
+					grid-template-columns: 1fr;
+				}
+
+				.stats-grid {
+					grid-template-columns: repeat(2, minmax(0, 1fr));
+				}
+			}
+
 			@media (max-width: 720px) {
 				main {
 					padding: 32px 14px;
@@ -131,7 +327,7 @@ const description = 'Freelance Microsoft 365 Consultant mit Schwerpunkt Intune, 
 				section {
 					padding: 22px 18px;
 					margin-bottom: 48px;
-					border-radius: 12px;
+					border-radius: 14px;
 				}
 
 				p,
@@ -143,6 +339,20 @@ const description = 'Freelance Microsoft 365 Consultant mit Schwerpunkt Intune, 
 				ul {
 					padding-left: 1rem;
 				}
+
+				.contact-grid {
+					grid-template-columns: 1fr;
+				}
+			}
+
+			@media (max-width: 480px) {
+				.stats-grid {
+					grid-template-columns: 1fr;
+				}
+
+				.hero-badges span {
+					font-size: 0.82rem;
+				}
 			}
 		</style>
 	</head>
@@ -152,20 +362,42 @@ const description = 'Freelance Microsoft 365 Consultant mit Schwerpunkt Intune, 
 
 		<main>
 			<section id="start">
-				<h1>Markus Stoll</h1>
-				<p><strong>Microsoft 365 / Intune Consultant</strong></p>
+				<div class="hero-layout">
+					<div>
+						<h1>Markus Stoll</h1>
+						<p><strong>Microsoft 365 / Intune Consultant</strong></p>
 
-				<p class="hero-text">
-					Ich unterstütze Unternehmen bei Einführung, Betrieb und Optimierung von Microsoft 365,
-					Microsoft Intune, Windows Autopilot, Entra ID, Exchange Online sowie klassischen
-					Active-Directory-Infrastrukturen – mit Fokus auf stabile Deployments, klare Prozesse
-					und automatisierte Administration.
-				</p>
+						<p class="hero-text">
+							Ich unterstütze Unternehmen bei Einführung, Betrieb und Optimierung von Microsoft 365,
+							Microsoft Intune, Windows Autopilot, Entra ID, Exchange Online sowie klassischen
+							Active-Directory-Infrastrukturen – mit Fokus auf stabile Deployments, klare Prozesse
+							und automatisierte Administration.
+						</p>
 
-				<p>
-					<a href="mailto:info@markusstoll.cloud">info@markusstoll.cloud</a> ·
-					0151 / 400 76 528 · Bielefeld
-				</p>
+						<div class="hero-badges">
+							<span>Microsoft 365</span>
+							<span>Intune</span>
+							<span>Autopilot</span>
+							<span>Entra ID</span>
+							<span>Exchange Online</span>
+							<span>Hybrid AD</span>
+						</div>
+
+						<p class="hero-meta">
+							<a href="mailto:info@markusstoll.cloud">info@markusstoll.cloud</a> ·
+							<a href="tel:+4915140076528">0151 / 400 76 528</a> · Bielefeld
+						</p>
+					</div>
+
+					<aside class="stack-card" aria-label="Technologieschwerpunkte">
+						<span class="stack-card-title">Technologie-Stack</span>
+						<div>Microsoft 365</div>
+						<div>Intune · Autopilot</div>
+						<div>Entra ID · Conditional Access</div>
+						<div>Exchange Online · SharePoint</div>
+						<div>Active Directory Hybrid</div>
+					</aside>
+				</div>
 			</section>
 
 			<section id="profil">
@@ -180,109 +412,203 @@ const description = 'Freelance Microsoft 365 Consultant mit Schwerpunkt Intune, 
 				</p>
 
 				<p>
-					Der fachliche Schwerpunkt liegt auf Microsoft Intune, Windows Autopilot,
-					Entra ID, Exchange Online, SharePoint, Teams und hybriden Active-Directory-
-					Strukturen. Ich unterstütze bei Geräteverwaltung, App Deployment, Compliance-
-					und Security-Richtlinien, Patchmanagement, Migrationen, Troubleshooting sowie
-					bei der Standardisierung und Automatisierung administrativer Prozesse.
+					Zu den betreuten Kunden- und Unternehmensumgebungen zählen unter anderem größere
+					Mittelstands- und Industrieunternehmen. Der fachliche Schwerpunkt liegt auf
+					Microsoft Intune, Windows Autopilot, Entra ID, Exchange Online, SharePoint,
+					Teams und hybriden Active-Directory-Strukturen.
 				</p>
 
 				<p>
-					Ich verbinde technische Umsetzung mit Beratungserfahrung: von der Analyse
-					bestehender Umgebungen über die Konzeption geeigneter Maßnahmen bis zur
+					Ich unterstütze bei Geräteverwaltung, App Deployment, Compliance- und
+					Security-Richtlinien, Patchmanagement, Migrationen, Troubleshooting sowie bei
+					der Standardisierung und Automatisierung administrativer Prozesse – von der
+					Analyse bestehender Umgebungen über die Konzeption geeigneter Maßnahmen bis zur
 					Umsetzung, Dokumentation und Übergabe an interne IT-Teams.
 				</p>
+
+				<div class="stats-grid">
+					<div class="stat-card">
+						<strong>1.000+</strong>
+						<span>Mitarbeitende in betreuten Kunden- und Unternehmensumgebungen</span>
+					</div>
+
+					<div class="stat-card">
+						<strong>550+</strong>
+						<span>konkret betreute Windows-, iOS- und macOS-Endgeräte in Microsoft-365-Umgebungen</span>
+					</div>
+
+					<div class="stat-card">
+						<strong>50%</strong>
+						<span>kürzere Bereitstellungszeit durch Optimierung von Windows-Autopilot-Prozessen</span>
+					</div>
+
+					<div class="stat-card">
+						<strong>400+</strong>
+						<span>Anwendungen im automatisierten Patch- und Updateprozess</span>
+					</div>
+				</div>
 			</section>
 
 			<section id="leistungen">
 				<h2>Leistungen</h2>
 
-				<ul>
-					<li>Microsoft Intune: Compliance Policies, Configuration Profiles, Security Baselines und App Deployment</li>
-					<li>Windows Autopilot: Azure AD Join, Entra Join und Deployment-Prozessoptimierung</li>
-					<li>Entra ID: Benutzer, Gruppen, Geräte, Conditional Access, MFA und Device Compliance</li>
-					<li>Exchange Online: Migration, Mailflow, Shared Mailboxes und Berechtigungen</li>
-					<li>Microsoft 365: Teams, SharePoint, OneDrive, Exchange Online und Office Apps</li>
-					<li>Patch Management: PatchMyPC, Windows Autopatch und automatisierte Updateprozesse</li>
-					<li>PowerShell-Automatisierung für Administration, Reporting und Fehleranalyse</li>
-					<li>Technische Dokumentation, Admin-Guides, Endnutzer-Anleitungen und Wissenstransfer</li>
-				</ul>
+				<div class="service-grid">
+					<article class="service-card">
+						<h3>Endpoint Management</h3>
+						<p>
+							Microsoft Intune, Compliance Policies, Configuration Profiles,
+							Security Baselines, BitLocker und App Deployment.
+						</p>
+					</article>
+
+					<article class="service-card">
+						<h3>Deployment & Provisioning</h3>
+						<p>
+							Windows Autopilot, Entra Join, Rollout-Optimierung,
+							Standardisierung und technische Fehleranalyse.
+						</p>
+					</article>
+
+					<article class="service-card">
+						<h3>Identity & Security</h3>
+						<p>
+							Entra ID, Conditional Access, MFA, Device Compliance,
+							Berechtigungen und hybride Identitätsstrukturen.
+						</p>
+					</article>
+
+					<article class="service-card">
+						<h3>Microsoft 365</h3>
+						<p>
+							Teams, SharePoint, OneDrive, Exchange Online, Office Apps,
+							Lizenzierung und Betriebsoptimierung.
+						</p>
+					</article>
+
+					<article class="service-card">
+						<h3>Patch & App Management</h3>
+						<p>
+							PatchMyPC, Windows Autopatch, Win32-, MSI- und LOB-App-Bereitstellung
+							sowie automatisierte Updateprozesse.
+						</p>
+					</article>
+
+					<article class="service-card">
+						<h3>Dokumentation & Übergabe</h3>
+						<p>
+							Technische Dokumentation, Admin-Guides, Endnutzer-Anleitungen,
+							Wissenstransfer und Prozessstandardisierung.
+						</p>
+					</article>
+				</div>
 			</section>
 
 			<section id="projekte">
 				<h2>Projektbeispiele</h2>
 
-				<h3>Betrieb und Weiterentwicklung einer Intune-Umgebung</h3>
-				<ul>
-					<li>Betreuung einer Umgebung mit ca. 300 Windows-, 150 iOS- und 100 macOS-Geräten</li>
-					<li>Umsetzung von Compliance Policies, Configuration Profiles, Security Baselines und BitLocker-Verschlüsselung</li>
-					<li>Weiterentwicklung der Endpunkt- und Geräteverwaltung für einen stabileren digitalen Arbeitsplatz</li>
-				</ul>
+				<div class="project-grid">
+					<article class="project-card">
+						<span class="project-label">Endpoint Management</span>
+						<h3>Betrieb und Weiterentwicklung einer Intune-Umgebung</h3>
+						<ul>
+							<li>Betreuung einer Umgebung mit ca. 300 Windows-, 150 iOS- und 100 macOS-Geräten</li>
+							<li>Umsetzung von Compliance Policies, Configuration Profiles, Security Baselines und BitLocker-Verschlüsselung</li>
+							<li>Weiterentwicklung der Endpunkt- und Geräteverwaltung für einen stabileren digitalen Arbeitsplatz</li>
+						</ul>
+					</article>
 
-				<h3>Optimierung Windows Autopilot Deployment</h3>
-				<ul>
-					<li>Analyse und Optimierung bestehender Autopilot-Prozesse</li>
-					<li>Reduktion der Bereitstellungszeit um ca. 50 %</li>
-					<li>Verbesserung der Benutzerführung und Standardisierung im Deployment-Prozess</li>
-				</ul>
+					<article class="project-card">
+						<span class="project-label">Autopilot</span>
+						<h3>Optimierung Windows Autopilot Deployment</h3>
+						<ul>
+							<li>Analyse und Optimierung bestehender Autopilot-Prozesse</li>
+							<li>Reduktion der Bereitstellungszeit um ca. 50 %</li>
+							<li>Verbesserung der Benutzerführung und Standardisierung im Deployment-Prozess</li>
+						</ul>
+					</article>
 
-				<h3>Automatisiertes Patchmanagement</h3>
-				<ul>
-					<li>Einführung, Betrieb und Pflege von PatchMyPC und Windows Autopatch</li>
-					<li>Verwaltung von über 400 Anwendungen im automatisierten Updateprozess</li>
-					<li>Reduktion manueller Aufwände und Verbesserung der Updatequalität</li>
-				</ul>
+					<article class="project-card">
+						<span class="project-label">Patch Management</span>
+						<h3>Automatisiertes Patchmanagement</h3>
+						<ul>
+							<li>Einführung, Betrieb und Pflege von PatchMyPC und Windows Autopatch</li>
+							<li>Verwaltung von über 400 Anwendungen im automatisierten Updateprozess</li>
+							<li>Reduktion manueller Aufwände und Verbesserung der Updatequalität</li>
+						</ul>
+					</article>
 
-				<h3>Migration Fileserver zu SharePoint Online / Teams</h3>
-				<ul>
-					<li>Planung und Durchführung der Migration klassischer Dateiserver nach Teams und SharePoint Online</li>
-					<li>Migration im mittleren TB-Bereich für ca. 500 Benutzer</li>
-					<li>Strukturierung von Berechtigungen und Datenablagen</li>
-					<li>Begleitung der Anwender und Anpassung bestehender Arbeitsprozesse an Microsoft 365</li>
-				</ul>
+					<article class="project-card">
+						<span class="project-label">Migration</span>
+						<h3>Migration Fileserver zu SharePoint Online / Teams</h3>
+						<ul>
+							<li>Planung und Durchführung der Migration klassischer Dateiserver nach Teams und SharePoint Online</li>
+							<li>Migration im mittleren TB-Bereich für ca. 500 Benutzer</li>
+							<li>Strukturierung von Berechtigungen und Datenablagen</li>
+							<li>Begleitung der Anwender und Anpassung bestehender Arbeitsprozesse an Microsoft 365</li>
+						</ul>
+					</article>
 
-				<h3>iPad-Rollout mit Microsoft Intune</h3>
-				<ul>
-					<li>Erstellung eines Intune-Bereitstellungsprozesses für iPads</li>
-					<li>Technische Vorbereitung des Rollouts und Abstimmung mit externem Dienstleister</li>
-					<li>Unterstützung bei App-Planung, Gerätebereitstellung und Dokumentation</li>
-				</ul>
+					<article class="project-card">
+						<span class="project-label">Mobile Devices</span>
+						<h3>iPad-Rollout mit Microsoft Intune</h3>
+						<ul>
+							<li>Erstellung eines Intune-Bereitstellungsprozesses für iPads</li>
+							<li>Technische Vorbereitung des Rollouts und Abstimmung mit externem Dienstleister</li>
+							<li>Unterstützung bei App-Planung, Gerätebereitstellung und Dokumentation</li>
+						</ul>
+					</article>
 
-				<h3>Deployment-Prozess für Business-Applikation</h3>
-				<ul>
-					<li>Konzeption und technische Umsetzung eines Deployment-Prozesses für eine neue eSales-App</li>
-					<li>Dokumentation des Bereitstellungsprozesses für Betrieb und Support</li>
-					<li>Integration der Anwendung in bestehende Endpoint-Management-Prozesse</li>
-				</ul>
+					<article class="project-card">
+						<span class="project-label">Business Apps</span>
+						<h3>Deployment-Prozess für Business-Applikation</h3>
+						<ul>
+							<li>Konzeption und technische Umsetzung eines Deployment-Prozesses für eine neue eSales-App</li>
+							<li>Dokumentation des Bereitstellungsprozesses für Betrieb und Support</li>
+							<li>Integration der Anwendung in bestehende Endpoint-Management-Prozesse</li>
+						</ul>
+					</article>
 
-				<h3>Hybrid Identity Management mit Entra ID und Active Directory</h3>
-				<ul>
-					<li>Administration von Benutzer-, Gruppen- und Geräteobjekten in Entra ID</li>
-					<li>Pflege von Benutzer- und Gruppenstrukturen in Active Directory On-Prem/Hybrid</li>
-					<li>Unterstützung bei Berechtigungsstrukturen, Identitätsverwaltung und Gerätezuordnung</li>
-				</ul>
+					<article class="project-card">
+						<span class="project-label">Hybrid Identity</span>
+						<h3>Hybrid Identity Management mit Entra ID und Active Directory</h3>
+						<ul>
+							<li>Administration von Benutzer-, Gruppen- und Geräteobjekten in Entra ID</li>
+							<li>Pflege von Benutzer- und Gruppenstrukturen in Active Directory On-Prem/Hybrid</li>
+							<li>Unterstützung bei Berechtigungsstrukturen, Identitätsverwaltung und Gerätezuordnung</li>
+						</ul>
+					</article>
+				</div>
 			</section>
 
 			<section id="kontakt">
 				<h2>Kontakt</h2>
 
 				<p>
-					Für Projektanfragen:
-					<a href="mailto:info@markusstoll.cloud">info@markusstoll.cloud</a>
+					Für Projektanfragen oder kurzfristige Unterstützung im Microsoft-365-,
+					Intune- und Modern-Workplace-Umfeld erreichen Sie mich direkt per E-Mail oder Telefon.
 				</p>
 
-				<p>
-					Telefon:
-					<a href="tel:+4915140076528">0151 / 400 76 528</a>
-				</p>
+				<div class="contact-grid">
+					<div class="contact-card">
+						<span>E-Mail</span>
+						<a href="mailto:info@markusstoll.cloud">info@markusstoll.cloud</a>
+					</div>
 
-				<p>
-					Verfügbarkeit: ab sofort
-				</p>
+					<div class="contact-card">
+						<span>Telefon</span>
+						<a href="tel:+4915140076528">0151 / 400 76 528</a>
+					</div>
 
-				<p>
-					Einsatz: Remote und Onsite nach Absprache
-				</p>
+					<div class="contact-card">
+						<span>Verfügbarkeit</span>
+						<strong>ab sofort</strong>
+					</div>
+
+					<div class="contact-card">
+						<span>Einsatz</span>
+						<strong>Remote und Onsite nach Absprache</strong>
+					</div>
+				</div>
 			</section>
 		</main>
 
